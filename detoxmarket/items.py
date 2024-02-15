@@ -21,4 +21,6 @@ class DetoxmarketItem(scrapy.Item):
     howToUse = Field()
     otherDetail = Field()
     scrapedDate = Field()
+    imageSrc = Field()
+    imageList = Field()
     pass

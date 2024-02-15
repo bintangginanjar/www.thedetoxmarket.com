@@ -94,5 +94,7 @@ class DetoxSpider(scrapy.Spider):
         product['howToUse'] = howToUse
         product['otherDetail'] = others
         product['scrapedDate'] = dtString
+        product['imageSrc'] = response.css('div.product-container > div.product-gallery > div.main > div.product-slideshow > div.product-media > a.main-img-link::attr(href)').get()
+        product['imageList'] = response.css('div.product-container > div.product-gallery > div.thumbnails > a.thumbnail::attr(href)').getall()        
 
         yield product
